@@ -1,3 +1,5 @@
+#NOM et PRENOM: Aouezghar Safouan
+
 import random as rand
 
 # Fonction pour afficher le nombre d'allumettes restantes
@@ -14,7 +16,7 @@ def tour_joueur(allumettes):
             choix = int(input("Choisissez un nombre entre 1 et 3: "))
             if 1 <= choix <= 3:
                 if choix > allumettes:
-                    print("Vous ne pouvez pas retirer plus d'allumettes qu'il n'en reste!")
+                    print("Vous ne pouvez pas retirer plus d'allumettes qu'il n'en reste")
                 else:
                     allumettes -= choix
                     break
@@ -47,11 +49,11 @@ def tour_ordinateur(allumettes):
 # Fonction principale du jeu où la logique est mise en œuvre
 def jouer(allumettes):
     while True:  # Demander qui commence jusqu'à obtenir une réponse valide
-        first_to_play = input("Voulez-vous commencer en premier ? (oui/non): ").lower()
+        first_to_play = input("Voulez vous commencer en premier? écrivez oui OU non : ").lower()
         if first_to_play == "oui" or first_to_play == "non":
             break
         else:
-            print("Entrée invalide. Veuillez répondre par 'oui' ou 'non'.")
+            print("Entrée invalide. Veuillez répondre par oui OU non")
 
     joueur_commence = first_to_play == "oui"
 
@@ -79,34 +81,34 @@ def jouer(allumettes):
 # Fonction pour demander au joueur s'il veut rejouer
 def rejouer():
     while True:  # Boucle jusqu'à obtenir une réponse valide
-        rejouer_jeu = input("Voulez-vous rejouer ? Ecrire Oui ou Non: ").lower()
+        rejouer_jeu = input("Voulez-vous rejouer ? Ecrivez oui OU non: ").lower()
         if rejouer_jeu == "oui":
             return True
         elif rejouer_jeu == "non":
             print("Passez une bonne journée!")
             return False
         else:
-            print("Entrée invalide. Veuillez répondre par 'oui' ou 'non'.")
+            print("Entrée invalide. Veuillez répondre par oui OU non: ")
 
 
 # Fonction principale pour démarrer et gérer le jeu
 def principale():
-    print("Bienvenue au jeu des allumettes!")
+    print("Bienvenue au jeu des allumettes")
     allumettes = rand.randint(15, 30)
-    print("Le jeu commence avec", allumettes, "allumettes.")
+    print("Le jeu commence avec", allumettes, "allumettes")
 
     while True:  # Boucle de rejouer, continue tant que le joueur veut rejouer
-        commencer = input("Voulez-vous commencer le jeu ? (oui/non): ").lower()
+        commencer = input("Voulez-vous commencer le jeu ? écrivez oui OU non: ").lower()
 
         if commencer == "oui":
             jouer(allumettes)
             rejouer()
             break
         elif commencer == "non":
-            print("Au revoir! À la prochaine.")
+            print("Passez une bonne journée")
             break
         else:
-            print("Entrée invalide. Veuillez répondre par 'oui' ou 'non'.")
+            print("Entrée invalide. Veuillez répondre par oui OU non: ")
 
 
 # Lancer le jeu en appelant la fonction principale
